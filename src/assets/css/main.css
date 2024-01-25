@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Satoshi', sans-serif; }
+
+body, html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  scroll-behavior: smooth; }
+
+h1 {
+  font-size: 3em;
+  font-weight: 700;
+  font-family: 'Cabinet Grotesk', sans-serif; }
+
+li {
+  list-style: none; }
+
+a {
+  color: #e2e2e2;
+  text-decoration: none; }
+  a:hover {
+    color: #018749;
+    transition: .2s ease-in; }
