@@ -4,7 +4,9 @@
 
 <template>
     <div class="contact--container">
-        <h1>Lets Connect!</h1>
+        <div class="heading--cont">
+            <h2>LETS CONNECT!</h2>
+        </div>
     </div>
 </template>
 
@@ -14,10 +16,20 @@
 
 .contact--container {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    width: 100%;
+    min-height: 100vh;
 
-    color: $light;
-    background-color: $darkGray;
+    color: $darkGray;
+    background-color: $light;
+
+    .heading--cont {
+        h2 {
+            font-size: 5em;
+            margin: 60px;
+        }
+    }
 }
 </style>

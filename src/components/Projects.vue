@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="project--container">
       <div class="heading--cont">
         <h2>SELECTED PROJECTS</h2>
       </div>
@@ -34,7 +34,7 @@
   
   <style lang="scss" scoped>
 @import "../assets/scss/variables";
-  .container {
+  .project--container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -46,9 +46,6 @@
     background-color: $dark;
 
     .heading--cont {
-      display: flex;
-      width: 100%;
-    
       h2 {
         font-size: 5em;
         margin: 60px;
