@@ -4,15 +4,14 @@
 
 <template>
     <div class="about--container">
-        <div class="about--shelf">
-            <h1>Who Am i?</h1>
-            <div class="bio--cont">
-                <p>
-                    I am an enthusiastic web developer and graphic designer located in North Carolina.
-                    With a passion for my craft, I excel in crafting sleek, minimalist, and responsive
-                    web solutions that not only meet but exceed client expectations.
+        <h2>WHO AM I?</h2>
+        <div class="bio--cont">
+            <p>
+                I am an enthusiastic web developer and graphic designer located in North Carolina.
+                With a passion for my craft, I excel in crafting sleek, minimalist, and responsive
+                web solutions that not only meet but exceed client expectations.
 
-                    <!-- I am eager to embark on a journey where I can not only
+                <!-- I am eager to embark on a journey where I can not only
                     showcase my skills but also continually enhance them.
                     I am committed to evolving into an even more proficient and versatile version
                     of myself.
@@ -22,8 +21,7 @@
                         title="this is a link to Tevin's youTube Channel"
                         href="https://youtube.com/@Troyzhen?si=BLpLFJiKb3nxRy70" target="_blank">YouTube</a>
                     channel 🙂📸. -->
-                </p>
-            </div>
+            </p>
         </div>
     </div>
 </template>
@@ -35,34 +33,24 @@
 .about--container {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     background-color: $light;
-    
 
-    .about--shelf {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
+    h2 {
+        font-size: 4em;
+        font-weight: bold;
+    }
+    .bio--cont {
+        padding: 40px;
         width: 100%;
-        min-height: 100vh;
-        gap: 20px;
 
-        img {
-            border: 1px solid blueviolet;
-        }
-        .bio--cont {
-            padding: 50px;
-            border: 1px solid yellowgreen;
-            
-            p {
-                text-align:start;
-                color: $lightGray;
-                font-size: 2em;
-            }
+        p {
+            color: $lightGray;
+            font-size: 3em;
         }
     }
 }
