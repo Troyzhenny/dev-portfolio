@@ -6,7 +6,7 @@
       <div class="row">
         <div v-for="(card, index) in cards" :key="index" class="card">
           <img :src="card.image" alt="Card Image" class="card-image">
-          <h2 class="title">{{ card.title }} <i class="fa-solid fa-arrow-right"></i></h2>
+          <h3 class="title">{{ card.title }} <i class="fa-solid fa-arrow-right"></i></h3>
           <p class="description">{{ card.description }}</p>
         </div>
       </div>
@@ -85,7 +85,8 @@
     }
 
     .title {
-     font-weight: 600; 
+     font-weight: 600;
+     font-size: 1.5em;
     }
   
     .description {
