@@ -41,8 +41,9 @@
     background-color: $light;
 
     h2 {
-        font-size: 4em;
-        font-weight: bold;
+        font-size: 5em;
+        font-weight: 600;
+        color: $darkGray;
     }
     .bio--cont {
         padding: 40px;
