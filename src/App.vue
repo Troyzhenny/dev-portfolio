@@ -22,7 +22,7 @@ import Footer from './components/Footer.vue';
             I am a passionate web developer with a background in <br> graphic design, merging functionality with stunning
             visuals <br> to craft responsive and beautiful experiences for my projects.
           </p>
-          <a href="#" class="cta--btn">
+          <a href="#projects" class="cta--btn">
             <p>Projects</p>
           </a>
         </div>
@@ -30,7 +30,7 @@ import Footer from './components/Footer.vue';
         </div>
 
         <div class="hero--image">
-          <img src="./assets/images/z.png" alt="">
+          <img src="./assets/images/progressive_app.svg" alt="">
         </div>
       </div>
     </div>
@@ -68,16 +68,21 @@ import Footer from './components/Footer.vue';
 
   .hero--shelf {
     display: flex;
-    // flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     min-height: 120vh;
+    gap: 80px;
+
+    .hero--image {
+      img {
+        width: 700px;
+      }
+    }
 
 
     .cta--btn {
-      color: $light;
-      border: 2px solid #018749;
+      border: 2px solid $mainColor;
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -85,21 +90,26 @@ import Footer from './components/Footer.vue';
       border-radius: 3px;
       width: 180px;
       height: 50px;
-      margin: 40px 0;
-
-      &:hover {
-        color: $darkGray;
-        background-color: #018749;
-        transition: .5s ease;
-      }
-
-
+      margin: 50px 0;
+      
       p {
         font-family: 'Satoshi', sans-serif;
         font-size: 1.2em;
         font-weight: 500;
         color: $light;
       }
+
+      &:hover {
+        p{
+          color: $secondary;
+          font-weight: 800;
+        }
+        background-color: $mainColor;
+        transform: translateY(-5px);
+        transition: .5s ease;
+      }
+
+
     }
   }
 
