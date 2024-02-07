@@ -6,7 +6,9 @@
     <div class="row">
       <div v-for="(card, index) in cards" :key="index" class="card">
         <img :src="card.image" alt="Card Image" class="card-image">
-        <h3 class="title">{{ card.title }} <i class="fa-solid fa-arrow-right"></i></h3>
+        <a href="#">
+          <h3 class="title">{{ card.title }} <i class="fa-solid fa-arrow-right"></i></h3>
+        </a>
         <p class="description">{{ card.description }}</p>
       </div>
     </div>
@@ -19,11 +21,11 @@ import { ref } from 'vue';
 export default {
   setup() {
     const cards = ref([
-      { title: 'tevintc.xyz', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
-      { title: 'playstationclone.xyz', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
-      { title: 'kyromerch.shop', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
-      { title: 'dominospos.app', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
       { title: 'expensetracker.app', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
+      { title: 'dominospos.app', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
+      { title: 'kyromerch.shop', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
+      { title: 'playstationclone.xyz', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
+      { title: 'tevintc.xyz', image: 'src/assets/images/devp.svg', description: 'Version 2 of my first portfolio created with vuejs.' },
       { title: 'pbrp.site', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' }
     ]);
 
@@ -69,8 +71,8 @@ export default {
 }
 
 .card {
-  border: 1px solid #3a3a3a;
   border-radius: 5px;
+  box-shadow: 10px 10px 20px 0px $projectCardShadow;
   width: 500px;
   height: 500px;
   margin: 50px;
@@ -79,6 +81,16 @@ export default {
   &:hover {
     border-radius: 20px;
     transition: .2s ease-out;
+
+    .card-image {
+      border-radius: 20px 20px 0 0;
+      transition: .2s ease-in-out;
+    }
+
+    .fa-arrow-right {
+      transform: rotateZ(-45deg) translate(10px, -5px);
+      transition: .3s ease;
+    }
   }
 
   .card-image {
@@ -86,11 +98,6 @@ export default {
     max-height: 300px;
     object-fit: cover;
     border-radius: 5px 5px 0 0;
-
-    &:hover {
-      border-radius: 20px 20px 0 0;
-      transition: .2s ease-in-out;
-    }
   }
 
   .title {
