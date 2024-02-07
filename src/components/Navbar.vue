@@ -5,10 +5,10 @@ import { ref } from 'vue';
 export default {
     setup() {
         const links = ref([
-            { text: "Home", url: "index.html" },
-            { text: "About", url: "#" },
-            { text: "Resume", url: "#" },
-            { text: "Contact", url: "#" }
+            { text: "Home", url: "#home" },
+            { text: "About", url: "#about" },
+            { text: "Resume", url: "#resume" },
+            { text: "Contact", url: "#contact" }
         ]);
 
         return {
@@ -24,8 +24,8 @@ export default {
     <div>
         <header>
             <div>
-                <a v-bind:href="links.length > 0 ? links[0].url : '#'">
-                    <img src="../assets/images/logo.png" id="logo" alt="Tevin's logo icon">
+                <a :href="links.length > 0 ? links[0].url : '#home'">
+                    <img src="../assets/images/logo-light.svg" id="logo" alt="Tevin's logo icon">
                 </a>
             </div>
             <nav>
@@ -51,13 +51,13 @@ header {
     right: 0;
     height: 50px;
     position: fixed;
-    padding: 20px 40px;
+    padding: 35px 40px;
     background-color: $dark;
     @include flex-box;
     justify-content: space-between;
 
     #logo {
-        width: 40px;
+        width: 30px;
     }
 
     ul {

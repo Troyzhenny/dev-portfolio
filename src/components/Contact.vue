@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="contact--container">
+    <div class="contact--container" id="contact">
         <div class="heading--cont">
             <h2>LETS CONNECT!</h2>
         </div>

@@ -12,7 +12,7 @@ import Footer from './components/Footer.vue';
   </header>
 
   <!-- Home -- Main -->
-  <main>
+  <main id="home">
     <div class="main--container">
       <div class="hero--shelf">
         <div class="hero--text">

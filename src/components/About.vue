@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="about--container">
+    <div class="about--container" id="about">
         <h2>WHO AM I?</h2>
         <div class="bio--cont">
             <p>
