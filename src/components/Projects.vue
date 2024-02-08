@@ -4,7 +4,7 @@
       <h2>SELECTED PROJECTS</h2>
     </div>
     <div class="row">
-      <a v-for="(card, index) in cards" :key="index" :href="card.url" :target="_blank" class="card">
+      <a v-for="(card, index) in cards" :key="index" :href="card.url" target="_blank" class="card">
         <img :src="card.image" alt="Card Image" class="card-image">
         <span>
           <h3 class="title">{{ card.title }} <i class="fa-solid fa-arrow-right"></i></h3>

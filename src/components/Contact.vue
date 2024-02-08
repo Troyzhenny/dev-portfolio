@@ -10,17 +10,20 @@
         <div class="content">
             <div class="social--container">
                 <div class="socialLinks">
-                    <span>
-                        <i class="fa-brands fa-linkedin-in"></i>
-                        <p>linkedin.com/in/tevin-campbell</p>
-                    </span>
-                    <span>
-                        <i class="fa-brands fa-github"></i>
-                        <p>github.com/Troyzhenny</p>
-                    </span>
+                    <h3>CONTACT INFO</h3>
                     <span>
                         <i class="fa-solid fa-envelope"></i>
                         <p>tevincampbell@yahoo.com</p>
+                    </span>
+                    <br>
+                    <h3>MY DIGITAL SPACES</h3>
+                    <span>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <p>linkedin</p>
+                    </span>
+                    <span>
+                        <i class="fa-brands fa-github"></i>
+                        <p>Github</p>
                     </span>
                 </div>
             </div>
@@ -48,20 +51,17 @@
 
 .contact--container {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
     width: 100%;
     min-height: 100vh;
 
     color: $darkGray;
     background-color: $light;
 
+
     .heading--cont {
-        // border: 3px solid blue;
         width: 100%;
-        height: 10%;
-        
+
         h2 {
             margin: 60px;
             font-size: 5em;
@@ -72,41 +72,43 @@
         display: flex;
         flex-wrap: wrap;
         place-items: center;
-        justify-content: center;
+        justify-content: space-around;
         width: 100%;
-        min-height: 100%;
-        // border: 4px solid #ff0080;
+        min-height: 100%; //100vh - 60px = 740px
+
         .social--container {
-            // border: 3px solid #00ff37;
             display: flex;
             place-items: center;
-            justify-content: center;
+            justify-content: space-around;
             width: 50%;
             min-height: 100%;
-            padding: 50px;
+
             .socialLinks {
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
-                
+
                 span {
                     font-size: 1.3em;
-                    color: $secondary;
+                    color: $lightGray;
                     display: flex;
                     place-items: center;
                     gap: 1rem;
+                }
+
+                h3 {
+                    color: $accentColor;
+                    font-size: 1.8em;
                 }
             }
         }
 
         .form--container {
-            // border: 3px solid #0099ff;
             display: flex;
             place-items: center;
-            justify-content: center;
+            justify-content: space-around;
             width: 50%;
             min-height: 100%;
-            padding: 50px;
 
             form {
                 display: flex;
@@ -122,11 +124,13 @@
                 input {
                     font-size: 1em;
                     padding: 10px;
-                    width: 500px;
+                    width: 600px;
                     border-radius: 3px;
                     outline: transparent;
-                    border: 2px solid $secondary;
                     background-color: transparent;
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
                     border-bottom: 2px solid $secondary;
                 }
 
@@ -135,10 +139,11 @@
                     padding: 10px;
                     border-radius: 3px;
                     outline: transparent;
-                    border: 2px solid $secondary;
                     background-color: transparent;
-                    border-bottom: 2px solid $secondary;
-                }
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                    border-bottom: 2px solid $secondary;                }
 
                 #submit-btn {
                     width: 200px;
@@ -148,7 +153,7 @@
                     color: $light;
                     border: 2px solid $secondary;
                     background-color: $secondary;
-                    
+
                     &:hover {
                         color: $secondary;
                         background-color: transparent;

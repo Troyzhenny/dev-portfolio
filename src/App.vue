@@ -26,7 +26,7 @@ import Footer from './components/Footer.vue';
             <a href="#projects" class="cta--btn">
               <p>Projects</p>
             </a>
-            <a href="#contacts" class="alt--cta--btn">
+            <a href="#contact" class="alt--cta--btn">
               <p>Hire me</p>
             </a>
           </div>

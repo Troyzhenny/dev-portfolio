@@ -4,7 +4,7 @@
 
 <template>
     <div class="footer--container">
-        <dir class="links--container">
+        <div class="links--container">
             <div>
                 <!-- Social Links -->
             </div>
@@ -14,7 +14,7 @@
             <div>
                 <!-- Back to top -->
             </div>
-        </dir>
+        </div>
         <div class="copyright--container">
             <p>©2024 Tevin Campbell</p>
         </div>
