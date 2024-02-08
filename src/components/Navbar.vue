@@ -7,6 +7,7 @@ export default {
         const links = ref([
             { text: "Home", url: "#home" },
             { text: "About", url: "#about" },
+            { text: "Projects", url: "#projects" },
             { text: "Resume", url: "#resume" },
             { text: "Contact", url: "#contact" }
         ]);
@@ -14,7 +15,7 @@ export default {
         return {
             links
         };
-    }
+    },
 };
 
 </script>
