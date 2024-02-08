@@ -22,9 +22,14 @@ import Footer from './components/Footer.vue';
             I am a passionate web developer with a background in <br> graphic design, merging functionality with stunning
             visuals <br> to craft responsive and beautiful experiences for my projects.
           </p>
-          <a href="#projects" class="cta--btn">
-            <p>Projects</p>
-          </a>
+          <div class="btn--container">
+            <a href="#projects" class="cta--btn">
+              <p>Projects</p>
+            </a>
+            <a href="#contacts" class="alt--cta--btn">
+              <p>Hire me</p>
+            </a>
+          </div>
         </div>
         <div>
         </div>
@@ -39,7 +44,7 @@ import Footer from './components/Footer.vue';
   <section>
     <About />
   </section>
-  
+
   <section>
     <Projects />
   </section>
@@ -51,11 +56,11 @@ import Footer from './components/Footer.vue';
   <section>
     <Footer />
   </section>
-
 </template>
 
 <style scoped lang="scss">
 @import "./assets/scss/variables";
+@import "./assets/scss/main.scss";
 
 .main--container {
   display: flex;
@@ -80,38 +85,19 @@ import Footer from './components/Footer.vue';
       }
     }
 
-
-    .cta--btn {
-      border: 2px solid $mainColor;
-      text-decoration: none;
+    .btn--container {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 3px;
-      width: 180px;
-      height: 50px;
-      margin: 50px 0;
-      
-      p {
-        font-family: 'Satoshi', sans-serif;
-        font-size: 1.2em;
-        font-weight: 500;
-        color: $light;
+      gap: 30px;
+
+      .cta--btn {
+        @include cta-btn-mix;
       }
-
-      &:hover {
-        p{
-          color: $secondary;
-          font-weight: 800;
-        }
-        background-color: $mainColor;
-        transform: translateY(-5px);
-        transition: .5s ease;
+      .alt--cta--btn {
+        @include alt-btn-mix;
       }
-
-
     }
   }
+
 
   .hero--text {
     h2 {

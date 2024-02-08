@@ -4,13 +4,13 @@
       <h2>SELECTED PROJECTS</h2>
     </div>
     <div class="row">
-      <div v-for="(card, index) in cards" :key="index" class="card">
+      <a v-for="(card, index) in cards" :key="index" :href="card.url" :target="_blank" class="card">
         <img :src="card.image" alt="Card Image" class="card-image">
-        <a href="#">
+        <span>
           <h3 class="title">{{ card.title }} <i class="fa-solid fa-arrow-right"></i></h3>
-        </a>
+        </span>
         <p class="description">{{ card.description }}</p>
-      </div>
+      </a>
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@ import { ref } from 'vue';
 export default {
   setup() {
     const cards = ref([
-      { title: 'expensetracker.app', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
+      { title: 'expensetracker.app', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.', url: 'https://www.codewars.com/dashboard'},
       { title: 'dominospos.app', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
       { title: 'kyromerch.shop', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
       { title: 'playstationclone.xyz', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
@@ -30,7 +30,7 @@ export default {
     ]);
 
     return { cards };
-  },
+  }
 };
 </script>
   
@@ -81,6 +81,7 @@ export default {
   &:hover {
     border-radius: 20px;
     transition: .2s ease-out;
+    cursor: pointer;
 
     .card-image {
       border-radius: 20px 20px 0 0;
@@ -90,6 +91,10 @@ export default {
     .fa-arrow-right {
       transform: rotateZ(-45deg) translate(10px, -5px);
       transition: .3s ease;
+    }
+
+    p {
+      color: $light;
     }
   }
 
