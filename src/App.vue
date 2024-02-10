@@ -81,7 +81,7 @@ import Footer from './components/Footer.vue';
 
     .hero--image {
       img {
-        width: 700px;
+        width: 600px;
       }
     }
 
