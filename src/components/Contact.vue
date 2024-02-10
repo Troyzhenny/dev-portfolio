@@ -29,14 +29,14 @@
             </div>
             <div class="form--container">
                 <form action="#" method="post">
-                    <label for="name">name</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Dan Houser" required>
 
-                    <label for="email">email</label>
-                    <input type="email" name="email" id="email" required>
+                    <label for="email">Email *</label>
+                    <input type="email" name="email" id="email" placeholder="dh@rockstargames.com" required>
 
-                    <label for="message">message</label>
-                    <textarea name="message" id="message" cols="50" rows="4"></textarea>
+                    <label for="message">Type Your Message Here *</label>
+                    <textarea name="message" id="message" cols="50" rows="4" placeholder="Hey Tevin, we're reaching out to. . ." required></textarea>
 
                     <input type="button" id="submit-btn" value="Submit">
                 </form>
@@ -74,22 +74,20 @@
         place-items: center;
         justify-content: space-around;
         width: 100%;
-        min-height: 100%; //100vh - 60px = 740px
+        min-height: 100%;
 
         .social--container {
             display: flex;
-            place-items: center;
-            justify-content: space-around;
+            justify-content: center;
             width: 50%;
             min-height: 100%;
-
             .socialLinks {
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
 
                 span {
-                    font-size: 1.3em;
+                    font-size: 1.5em;
                     color: $lightGray;
                     display: flex;
                     place-items: center;
@@ -97,7 +95,7 @@
                 }
 
                 h3 {
-                    color: $accentColor;
+                    color: $dark;
                     font-size: 1.8em;
                 }
             }
@@ -115,47 +113,56 @@
                 flex-direction: column;
 
                 label {
-                    font-size: 1.3em;
+                    font-size: 1.5em;
+                    font-weight: 600;
                     margin: 10px 0;
                     position: relative;
-                    color: $secondary;
+                    color: $dark;
                 }
 
                 input {
-                    font-size: 1em;
-                    padding: 10px;
-                    width: 600px;
-                    border-radius: 3px;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                    color: $darkGray;
+                    padding: 15px;
+                    margin-bottom: 40px;
+                    width: 700px;
                     outline: transparent;
+                    border-radius: 5px;
                     background-color: transparent;
-                    border-top: none;
-                    border-left: none;
-                    border-right: none;
-                    border-bottom: 2px solid $secondary;
+                    border: .13rem solid $mainColor;
+
+                    &:focus {
+                        background-color: $focus;
+                    }
                 }
 
                 textarea {
-                    font-size: 1em;
-                    padding: 10px;
-                    border-radius: 3px;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                    color: $darkGray;
+                    padding: 15px;
                     outline: transparent;
+                    border-radius: 5px;
                     background-color: transparent;
-                    border-top: none;
-                    border-left: none;
-                    border-right: none;
-                    border-bottom: 2px solid $secondary;                }
+                    border: .13rem solid $mainColor;
+
+                    &:focus {
+                        background-color: $focus;
+                    }
+                }
 
                 #submit-btn {
                     width: 200px;
                     margin-top: 40px;
                     cursor: pointer;
                     font-weight: 600;
-                    color: $light;
-                    border: 2px solid $secondary;
-                    background-color: $secondary;
+                    color: $dark;
+                    border: 2px solid $mainColor;
+                    background-color: $mainColor;
 
                     &:hover {
-                        color: $secondary;
+                        color: $mainColor;
                         background-color: transparent;
                         border: 2px solid $mainColor;
                         transition: .5s ease-in-out;
