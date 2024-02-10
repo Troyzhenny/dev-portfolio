@@ -1,6 +1,6 @@
 # tc-portfolio
 
-This project is version #2 of my portfolio to showcase my projects to hiring managers and clients.
+This project is my portfolio to showcase my projects to hiring managers and clients.
 
 
 ## Authors
