@@ -53,7 +53,7 @@ export default {
                     <label for="email">Email *</label>
                     <input type="email" name="email" id="email" placeholder="dh@rockstargames.com" required>
 
-                    <label for="message">Type Your Message Here *</label>
+                    <label for="message">Message *</label>
                     <textarea name="message" id="message" cols="50" rows="4"
                         placeholder="Hey Tevin, we're reaching out to. . ." required></textarea>
 

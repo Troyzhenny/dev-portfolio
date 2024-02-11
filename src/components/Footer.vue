@@ -78,11 +78,10 @@ export default {
             display: flex;
             justify-content: center;
             flex-direction: column;
-            width: 100%;
-            height: 100px;
-            padding: 50px;
-            margin: 50px;
-            
+            width: auto;
+            height: 150px;
+            padding: 5px;
+            margin: 50px;            
             
             h3 {
                 color: $light;
