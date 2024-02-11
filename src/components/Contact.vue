@@ -1,5 +1,23 @@
-<script setup>
+<script>
+import { ref } from 'vue';
 
+export default {
+    setup() {
+        const footerLinks = ref([
+            { name: "Github", url: "https://github.com/Troyzhenny" },
+            { name: "LinkedIn", url: "https://www.linkedin.com/in/tevin-campbell/" }
+        ]);
+
+        const mailLinks = ref([
+            { name: "tevincampbell73@yahoo.com", url: "mailto:tevincampbell@yahoo.com" }
+        ]);
+
+        return {
+            footerLinks,
+            mailLinks
+        }
+    }
+}
 </script>
 
 <template>
@@ -12,18 +30,18 @@
                 <div class="socialLinks">
                     <h3>CONTACT INFO</h3>
                     <span>
-                        <i class="fa-solid fa-envelope"></i>
-                        <p>tevincampbell@yahoo.com</p>
+                        <a v-for="(mailLink, index) in mailLinks" :key="index" :href="mailLink.url" target="_blank">
+                            <i class="fa-solid fa-envelope"></i>
+                            <p>{{ mailLink.name }}</p>
+                        </a>
                     </span>
                     <br>
                     <h3>MY DIGITAL SPACES</h3>
                     <span>
-                        <i class="fa-brands fa-linkedin-in"></i>
-                        <p>linkedin</p>
-                    </span>
-                    <span>
-                        <i class="fa-brands fa-github"></i>
-                        <p>Github</p>
+                        <a v-for="(footerLink, index) in footerLinks" :key="index" :href="footerLink.url" target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <p>{{ footerLink.name }}</p>
+                        </a>
                     </span>
                 </div>
             </div>
@@ -36,7 +54,8 @@
                     <input type="email" name="email" id="email" placeholder="dh@rockstargames.com" required>
 
                     <label for="message">Type Your Message Here *</label>
-                    <textarea name="message" id="message" cols="50" rows="4" placeholder="Hey Tevin, we're reaching out to. . ." required></textarea>
+                    <textarea name="message" id="message" cols="50" rows="4"
+                        placeholder="Hey Tevin, we're reaching out to. . ." required></textarea>
 
                     <input type="button" id="submit-btn" value="Submit">
                 </form>
@@ -81,22 +100,24 @@
             justify-content: center;
             width: 50%;
             min-height: 100%;
+
             .socialLinks {
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
 
-                span {
+                h3 {
+                    color: $dark;
+                    font-size: 1.8em;
+                }
+
+                span > a {
                     font-size: 1.5em;
                     color: $lightGray;
                     display: flex;
                     place-items: center;
+                    margin-bottom: 1rem;
                     gap: 1rem;
-                }
-
-                h3 {
-                    color: $dark;
-                    font-size: 1.8em;
                 }
             }
         }
