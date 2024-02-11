@@ -10,26 +10,22 @@
           <h3 class="title">{{ card.title }} <i class="fa-solid fa-arrow-right"></i></h3>
         </span>
         <p class="description">{{ card.description }}</p>
+        <br><br>
+        <input type="button" value="Code" @click="handleSourceLink(card.source)">
       </a>
     </div>
   </div>
 </template>
   
 <script>
-import { ref } from 'vue';
+import { cards } from "../cards";
 
 export default {
   setup() {
-    const cards = ref([
-      { title: 'expensetracker.app', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.', url: 'https://www.codewars.com/dashboard'},
-      { title: 'dominospos.app', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
-      { title: 'kyromerch.shop', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
-      { title: 'playstationclone.xyz', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' },
-      { title: 'tevintc.xyz', image: 'src/assets/images/devp.svg', description: 'Version 2 of my first portfolio created with vuejs.' },
-      { title: 'pbrp.site', image: 'src/assets/images/z.png', description: 'lorem Ipsum Is my bestest friend in the entire world.' }
-    ]);
-
-    return { cards };
+    const handleSourceLink = (source) => {
+      window.open(source, "_blank")
+    }
+    return { cards, handleSourceLink };
   }
 };
 </script>
@@ -66,6 +62,26 @@ export default {
     i {
       font-size: .70em;
       transform: rotateZ(-45deg);
+    }
+
+    // Source Code Button
+    input {
+      width: 130px;
+      color: $light;
+      background-color: $dark;
+      padding: 10px 40px;
+      border-radius: 5px;
+      border: 1px solid $lightGray;
+      display: flex;
+      place-items: center;
+      justify-content: center;
+      margin-left: 80px;
+      cursor: pointer;
+
+      &:hover {
+        transition: .2s ease-in-out;
+        border-color: $mainColor;
+      }
     }
   }
 }
