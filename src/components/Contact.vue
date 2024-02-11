@@ -30,7 +30,7 @@ export default {
                 <div class="socialLinks">
                     <h3>CONTACT INFO</h3>
                     <span>
-                        <a v-for="(mailLink, index) in mailLinks" :key="index" :href="mailLink.url" target="_blank">
+                        <a v-for="(mailLink, index) in mailLinks" :key="index" :href="mailLink.url">
                             <i class="fa-solid fa-envelope"></i>
                             <p>{{ mailLink.name }}</p>
                         </a>
