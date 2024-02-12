@@ -18,7 +18,7 @@
 </template>
   
 <script>
-import { cards } from "../cards";
+import { cards } from "./cards";
 
 export default {
   setup() {
