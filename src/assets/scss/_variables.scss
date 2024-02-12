@@ -1,1 +1,23 @@
 // Colors
+$light: #e2e2e2;
+$mainColor: #A7C957;
+$darkGray: #202020;
+$lightGray: #888888;
+$dark: #1c1c1c;
+$focus: #dbff8723;
+$projectCardShadow: #131313;
+
+
+@mixin flex-box {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
+
+@mixin cta-btn-mix {
+
+}
+
+@mixin alt-btn-mix {
+
+}
