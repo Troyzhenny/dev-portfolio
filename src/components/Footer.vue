@@ -9,7 +9,8 @@ export default {
         ]);
 
         const mailLinks = ref([
-            { name: "tevincampbell73@yahoo.com", url: "mailto:tevincampbell@yahoo.com" }
+            { name: "tevincampbell73@yahoo.com", url: "mailto:tevincampbell@yahoo.com" },
+            {name: "Discord: @troyzhen"}
         ]);
 
         return {
@@ -27,7 +28,6 @@ export default {
                 <h3>Links</h3>
                 <span>
                     <a v-for="(footerLink, index) in footerLinks" :key="index" :href="footerLink.url" target="_blank">
-                        <i class="fa-brands fa-linkedin-in"></i>
                         <p>{{ footerLink.name }}</p>
                     </a>
                 </span>
@@ -36,7 +36,6 @@ export default {
                 <h3>Contact</h3>
                 <span>
                     <a v-for="(mailLink, index) in mailLinks" :key="index" :href="mailLink.url">
-                        <i class="fa-solid fa-envelope"></i>
                         <p>{{ mailLink.name }}</p>
                     </a>
                 </span>
