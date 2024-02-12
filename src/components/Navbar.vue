@@ -26,7 +26,7 @@ export default {
         <header>
             <div>
                 <a :href="links.length > 0 ? links[0].url : '#home'">
-                    <img src="../assets/images/logo-light.svg" id="logo" alt="Tevin's logo icon">
+                    <img src="/images/logo-light.svg" id="logo" alt="Tevin's logo icon">
                 </a>
             </div>
             <nav>
