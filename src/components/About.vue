@@ -28,7 +28,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    place-items: center;
     width: 100%;
     min-height: 100vh;
     background-color: $light;
