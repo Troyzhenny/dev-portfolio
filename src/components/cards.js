@@ -32,7 +32,7 @@ export const cards = ref([
   },
   {
     title: "tevintc.xyz",
-    image: "./src/assets/images/devp.svg",
+    image: "/images/devp.svg",
     description: "Version 2 of my first portfolio created with vuejs.",
     url: "https://www.patreon.com/Troyzhen?fan_landing=true&view_as=public",
     source: "https://github.com/Troyzhenny/dev-portfolio",
