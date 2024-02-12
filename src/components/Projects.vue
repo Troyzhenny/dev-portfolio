@@ -28,28 +28,28 @@ export default {
     const cards = [
   {
     title: "expensetracker.app",
-    image: "/images/z.png",
+    image: "/images/soon.svg",
     description: "lorem Ipsum Is my bestest friend in the entire world.",
     url: "https://www.codewars.com/dashboard",
     source: "https://www.codewars.com/dashboard",
   },
   {
     title: "dominospos.app",
-    image: "/images/z.png",
+    image: "/images/soon.svg",
     description: "lorem Ipsum Is my bestest friend in the entire world.",
     url: "https://www.codewars.com/dashboard",
     source: "https://www.codewars.com/dashboard",
   },
   {
     title: "kyromerch.shop",
-    image: "/images/z.png",
+    image: "/images/soon.svg",
     description: "lorem Ipsum Is my bestest friend in the entire world.",
     url: "https://www.codewars.com/dashboard",
     source: "https://www.codewars.com/dashboard",
   },
   {
     title: "playstationclone.xyz",
-    image: "/images/z.png",
+    image: "/images/soon.svg",
     description: "lorem Ipsum Is my bestest friend in the entire world.",
     url: "https://www.codewars.com/dashboard",
     source: "https://github.com/Troyzhenny/playstation.com-clone",
@@ -63,7 +63,7 @@ export default {
   },
   {
     title: "pbrp.site",
-    image: "/images/z.png",
+    image: "/images/soon.svg",
     description: "lorem Ipsum Is my bestest friend in the entire world.",
     url: "https://www.codewars.com/dashboard",
     source: "https://www.codewars.com/dashboard",

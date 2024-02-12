@@ -14,10 +14,8 @@ html {
     scroll-behavior: smooth;
 }
 
-li::marker {
-
-    content: "⚡";
-
+li {
+    list-style: none;
 }
 
 a {
