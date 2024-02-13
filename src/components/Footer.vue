@@ -48,7 +48,7 @@ export default {
             </div>
         </div>
         <div class="copyright--container">
-            <p>©2024 Tevin Campbell  — made with Vue and lots of 💖</p>
+            <p>©2024 Tevin Campbell  — built with Vue and lots of 💖</p>
         </div>
     </div>
 </template>
