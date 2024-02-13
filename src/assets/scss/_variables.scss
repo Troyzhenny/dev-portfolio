@@ -15,9 +15,45 @@ $projectCardShadow: #131313;
 }
 
 @mixin cta-btn-mix {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: $mainColor;
+    padding: 10px 50px;
+    margin-top: 40px;
 
+    p {
+        font-weight: 500;
+        color: $darkGray;
+    }
+
+    &:hover {
+        p {
+            color: $light;
+        }
+        background-color: $mainColor;
+        transition: .2s ease-in-out;
+        transform: translateY(10px);
+    }
 }
 
 @mixin alt-btn-mix {
+    display: inline-block;
+    border-radius: 5px;
+    border: 2px solid $mainColor;
+    padding: 10px 50px;
+    margin-top: 40px;
 
+    p {
+        font-weight: 500;
+        color: $light;
+    }
+
+    &:hover {
+        p {
+            color: $light;
+        }
+        background-color: $mainColor;
+        transition: .2s ease-in-out;
+        transform: translateY(10px);
+    }
 }
