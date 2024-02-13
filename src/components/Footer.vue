@@ -59,29 +59,37 @@ export default {
 
 .footer--container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    place-items: center;
+    width: 100%;
+    min-height: 100%;
     color: $mainColor;
     background-color: $darkGray;
 
+    border: 1px solid $mainColor;
+
 
     .links--container {
-        display: inline-flex;
+        display: flex;
         place-items: center;
         justify-content: space-between;
         padding: 40px;
         width: 100%;
+        min-height: 100%;
         color: $lightGray;
+
+    border: 1px solid $mainColor;
+
 
         :is(#sq1, #sq2) {
             display: flex;
             justify-content: center;
             flex-direction: column;
-            width: auto;
-            height: 150px;
-            padding: 5px;
-            margin: 50px;            
+            width: 100%;
+            min-height: 100%;
+            
+            border: 1px solid $mainColor;
+            
             
             h3 {
                 color: $light;
@@ -102,33 +110,36 @@ export default {
             }
         }
     }
-}
-
-.to--top a {
-    display: flex;
-    place-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 40px;
-    gap: 5px;
-
-    .fa-shuttle-space {
-        font-size: 2em;
-        transform: rotateZ(-90deg);
-        color: $lightGray;
-
-        &:hover {
-            color: $mainColor;
-            transform: rotate(-90deg) translateX(20px);
-            transition: .3s ease-in-out;
+    .to--top a {
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 100%;
+        gap: 5px;
+    
+        border: 1px solid $mainColor;
+    
+    
+        .fa-shuttle-space {
+            font-size: 2em;
+            transform: rotateZ(-90deg);
+            color: $lightGray;
+    
+            &:hover {
+                color: $mainColor;
+                transform: rotate(-90deg) translateX(20px);
+                transition: .3s ease-in-out;
+            }
+        }
+    
+        p {
+            font-weight: 500;
+            color: $lightGray;
         }
     }
-
-    p {
-        font-weight: 500;
-        color: $lightGray;
-    }
 }
+
 
 .copyright--container {
     display: flex;
@@ -143,6 +154,17 @@ export default {
         width: 100%;
         min-width: 50%;
         color: $lightGray;
+    }
+}
+
+// Queries //
+/* Styles for smaller screens */
+@media screen and (max-width: 768px) {
+    .footer--container {
+        .heading--cont>h2 {
+            font-size: 3em;
+            margin: 50px;
+        }
     }
 }
 </style>

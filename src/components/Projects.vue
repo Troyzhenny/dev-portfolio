@@ -190,7 +190,7 @@ export default {
 @media screen and (max-width: 768px) {
     .project--container {
         .heading--cont>h2 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 50px 0 -40px 50px;
         }
     }
