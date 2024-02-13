@@ -20,14 +20,11 @@ import Footer from './components/Footer.vue';
           <h2>I'm Tevin</h2>
           <p>
             I am a passionate web developer with a background in <br> graphic design, merging functionality with stunning
-            visuals <br> to craft responsive and beautiful experiences for my projects.
+            visuals.
           </p>
           <div class="btn--container">
             <a href="#projects" class="cta--btn">
               <p>Projects</p>
-            </a>
-            <a href="#contact" class="alt--cta--btn">
-              <p>Hire me</p>
             </a>
           </div>
         </div>
@@ -92,10 +89,6 @@ import Footer from './components/Footer.vue';
       .cta--btn {
         @include cta-btn-mix;
       }
-
-      .alt--cta--btn {
-        @include alt-btn-mix;
-      }
     }
   }
 
@@ -103,7 +96,6 @@ import Footer from './components/Footer.vue';
   .hero--text {
     h2 {
       font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 5em;
       line-height: .8;
       color: $light;
       margin: 10px 0;
@@ -111,7 +103,6 @@ import Footer from './components/Footer.vue';
 
     p {
       font-family: 'Satoshi', sans-serif;
-      font-size: 1.5em;
       color: $lightGray;
       margin: 0;
     }
@@ -122,20 +113,32 @@ import Footer from './components/Footer.vue';
 /* Styles for smaller screens */
 @media screen and (max-width: 768px) {
   .main--container {
-    margin-top: -80px;
-    padding: 0 40px;
-
     .hero--text {
+      margin-top: -100px;
+      margin-left: 30px;
+      margin-right: -50px;
+
       h2 {
         font-size: 4em;
       }
 
       p {
-        font-size: 1.5em;
+        font-size: 1.25em;
       }
     }
-    .hero--shelf>.hero--image {
-      display: none;
+
+    .hero--shelf {
+      .hero--image {
+        display: none;
+      }
+
+      .btn--container {
+        .cta--btn {
+          @include cta-btn-mix;
+          width: 140px;
+          height: 50px
+        }
+      }
     }
   }
 }

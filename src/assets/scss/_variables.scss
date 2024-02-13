@@ -37,26 +37,3 @@ $projectCardShadow: #131313;
         transform: translateY(10px);
     }
 }
-
-@mixin alt-btn-mix {
-    @include flex-box;
-    width: 160px;
-    height: 60px;
-    border-radius: 5px;
-    border: 2px solid $mainColor;
-    margin-top: 40px;
-
-    p {
-        font-weight: 500;
-        color: $light;
-    }
-
-    &:hover {
-        p {
-            color: $light;
-        }
-        background-color: $mainColor;
-        transition: .2s ease-in-out;
-        transform: translateY(10px);
-    }
-}
