@@ -1,7 +1,7 @@
 <template>
   <div class="project--container" id="projects">
     <div class="heading--cont">
-      <h2>SELECTED PROJECTS</h2>
+      <h2>SELECTED WORK</h2>
     </div>
     <div class="row">
       <a v-for="(card, index) in cards" :key="index" :href="card.url" target="_blank" class="card">
@@ -86,6 +86,9 @@ export default {
   justify-content: center;
   width: 100%;
   min-height: 100vh;
+  // TEST
+  position: relative;
+  z-index: -1;
 
   color: $light;
   background-color: $dark;
@@ -121,7 +124,6 @@ export default {
       display: flex;
       place-items: center;
       justify-content: center;
-      margin-left: 80px;
       cursor: pointer;
 
       &:hover {
@@ -133,6 +135,10 @@ export default {
 }
 
 .card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  place-items: center;
   border-radius: 5px;
   box-shadow: 10px 10px 20px 0px $projectCardShadow;
   width: 500px;
@@ -175,7 +181,19 @@ export default {
 
   .description {
     margin-top: 20px;
+    padding: 0 20px;
   }
+}
+
+// Queries //
+/* Styles for smaller screens */
+@media screen and (max-width: 768px) {
+    .project--container {
+        .heading--cont>h2 {
+            font-size: 2.5em;
+            margin: 50px 0 -40px 50px;
+        }
+    }
 }
 </style>
   

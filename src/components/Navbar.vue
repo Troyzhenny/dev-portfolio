@@ -1,6 +1,6 @@
 <script>
 // NAVIGATION
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 export default {
     setup() {
@@ -12,8 +12,25 @@ export default {
             { text: "Contact", url: "#contact" }
         ]);
 
+        let burgerMenu;
+        let offScreenMenu;
+
+        onMounted(() => {
+            burgerMenu = document.querySelector(".burger-menu");
+            offScreenMenu = document.querySelector(".off-screen-menu");
+        })
+
+        const handleMenuToggle = () => {
+            if (burgerMenu && offScreenMenu) {
+                burgerMenu.classList.toggle("active-ham")
+                offScreenMenu.classList.toggle("active-menu")
+            }
+        }
+
+
         return {
-            links
+            links,
+            handleMenuToggle
         };
     },
 };
@@ -23,7 +40,7 @@ export default {
 
 <template>
     <div>
-        <header>
+        <header :class="{ 'menu-open': burgerMenu }">
             <div>
                 <a :href="links.length > 0 ? links[0].url : '#home'">
                     <img src="/images/logo-light.svg" id="logo" alt="Tevin's logo icon">
@@ -33,11 +50,24 @@ export default {
                 <div>
                     <ul>
                         <li v-for="(link, index) in links" :key="index" class="nav-items">
-                            <a v-bind:title="`Links to ${link.url}`" v-bind:href="link.url" class="nav-link">{{ link.text }}</a>
+                            <a v-bind:title="`Links to ${link.url}`" v-bind:href="link.url" class="nav-link">{{ link.text
+                            }}</a>
                         </li>
                     </ul>
                 </div>
             </nav>
+            <div class="off-screen-menu">
+                <ul>
+                    <li v-for="(link, index) in links" :key="index" class="nav-items">
+                        <a v-bind:title="`Links to ${link.url}`" v-bind:href="link.url" class="nav-link">{{ link.text }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger-menu" @click="handleMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </header>
     </div>
 </template>
@@ -57,6 +87,11 @@ header {
     @include flex-box;
     justify-content: space-between;
 
+    transition: padding-right 0.2s ease;
+    &.menu-open {
+        padding-right: -450px;
+    }
+
     #logo {
         width: 30px;
     }
@@ -69,8 +104,114 @@ header {
 
     nav {
         @include flex-box;
-        flex-wrap: wrap;
         justify-content: space-between;
+    }
+
+    .off-screen-menu {
+        height: 100vh;
+        width: 100%;
+        max-width: 450px;
+        position: fixed;
+        top: 0;
+        right: -450px; //Change to -450px to hide
+        background-color: $dark;
+
+        display: flex;
+        justify-content: center;
+        font-size: 3rem;
+        transition: .2s ease;
+        position: absolute;
+
+        border: 1px solid $mainColor;
+
+
+        ul {
+            display: flex;
+            flex-direction: column;
+
+            li,
+            a {
+                color: $light;
+            }
+        }
+    }
+
+    .off-screen-menu.active-menu {
+        right: 0px;
+    }
+
+
+    .burger-menu {
+        display: none;
+        flex-direction: column;
+        place-items: left;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+
+        span {
+            width: 40px;
+            min-height: .2rem;
+            background-color: $light;
+        }
+
+
+        span:nth-child(1) {
+            width: 25px;
+            margin-bottom: 10px;
+        }
+
+        span:nth-child(3) {
+            width: 20px;
+            place-self: flex-end;
+            margin-top: 10px;
+        }
+
+        &:hover span:nth-child(1),
+        &:hover span:nth-child(3) {
+            width: 100%;
+            transition: .2s ease-in-out;
+        }
+    }
+
+    .burger-menu.active-ham {
+
+        span:nth-child(1) {
+            width: 0%;
+            transition: .2s ease;
+        }
+
+        span:nth-child(2) {
+            transform: rotateZ(-45deg);
+            transition: .2s ease;
+        }
+
+        span:nth-child(3) {
+            width: 100%;
+            margin-top: -.2rem;
+            transform: rotateZ(45deg);
+            transition: .2s ease;
+        }
+
+    }
+}
+
+// Queries //
+/* Styles for smaller screens */
+@media screen and (max-width: 768px) {
+    header {
+        padding-right: 40px;
+        nav {
+            ul {
+                display: none;
+            }
+        }
+
+        .burger-menu {
+            display: flex;
+        }
     }
 }
 </style>

@@ -65,6 +65,7 @@ export default {
     color: $mainColor;
     background-color: $darkGray;
 
+
     .links--container {
         display: inline-flex;
         place-items: center;

@@ -66,7 +66,7 @@ import Footer from './components/Footer.vue';
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  place-items: center;
   width: 100%;
   min-height: 100%;
   background-color: $darkGray;
@@ -92,6 +92,7 @@ import Footer from './components/Footer.vue';
       .cta--btn {
         @include cta-btn-mix;
       }
+
       .alt--cta--btn {
         @include alt-btn-mix;
       }
@@ -113,6 +114,28 @@ import Footer from './components/Footer.vue';
       font-size: 1.5em;
       color: $lightGray;
       margin: 0;
+    }
+  }
+}
+
+// Queries //
+/* Styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .main--container {
+    margin-top: -80px;
+    padding: 0 40px;
+
+    .hero--text {
+      h2 {
+        font-size: 4em;
+      }
+
+      p {
+        font-size: 1.5em;
+      }
+    }
+    .hero--shelf>.hero--image {
+      display: none;
     }
   }
 }
