@@ -18,7 +18,15 @@ export default {
         onMounted(() => {
             burgerMenu = document.querySelector(".burger-menu");
             offScreenMenu = document.querySelector(".off-screen-menu");
-        })
+
+            // Event listener to close menu when a link is clicked
+            offScreenMenu.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    handleMenuToggle();
+                });
+            });
+        });
+
 
         const handleMenuToggle = () => {
             if (burgerMenu && offScreenMenu) {
@@ -88,6 +96,7 @@ header {
     justify-content: space-between;
 
     transition: padding-right 0.2s ease;
+
     &.menu-open {
         padding-right: -450px;
     }
@@ -118,11 +127,8 @@ header {
 
         display: flex;
         justify-content: center;
-        font-size: 3rem;
         transition: .2s ease;
         position: absolute;
-
-        border: 1px solid $mainColor;
 
 
         ul {
@@ -168,12 +174,6 @@ header {
             place-self: flex-end;
             margin-top: 10px;
         }
-
-        &:hover span:nth-child(1),
-        &:hover span:nth-child(3) {
-            width: 100%;
-            transition: .2s ease-in-out;
-        }
     }
 
     .burger-menu.active-ham {
@@ -203,6 +203,7 @@ header {
 @media screen and (max-width: 768px) {
     header {
         padding-right: 40px;
+
         nav {
             ul {
                 display: none;
@@ -211,6 +212,20 @@ header {
 
         .burger-menu {
             display: flex;
+        }
+
+        .off-screen-menu {
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                li,
+                a {
+                    font-size: 1.25em;
+                    font-weight: 600;
+                    color: $light;
+                }
+            }
         }
     }
 }
