@@ -19,14 +19,15 @@ $projectCardShadow: #131313;
     width: 160px;
     height: 50px;
     border-radius: 5px;
-    background-color: $mainColor;
+    background-color: transparent;
+    border: 1px solid $mainColor;
     padding: 10px 50px;
     margin-top: 40px;
 
     p {
         font-size: 1.25em;
         font-weight: 500;
-        color: $darkGray;
+        color: $light;
     }
 
     &:hover {
