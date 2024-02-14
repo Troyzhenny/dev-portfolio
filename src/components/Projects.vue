@@ -1,7 +1,7 @@
 <template>
   <div class="project--container" id="projects">
     <div class="heading--cont">
-      <h2>SELECTED WORK</h2>
+      <h2>SELECTED WORK.</h2>
     </div>
     <div class="row">
       <a v-for="(card, index) in cards" :key="index" :href="card.url" target="_blank" class="card">
@@ -97,7 +97,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
 
   color: $light;
   background-color: $dark;
@@ -129,6 +129,7 @@ export default {
       border: 1px solid $lightGray;
       background-color: $darkGray;
       color: $light;
+      font-size: 1em;
       margin: 1.5rem;
       cursor: pointer;
     }
@@ -195,7 +196,8 @@ export default {
 @media screen and (max-width: 768px) {
   .project--container {
     .heading--cont>h2 {
-      font-size: 3em;
+      font-size: 2.8em;
+      line-height: 1.1;
       margin: 50px 0 -40px 50px;
     }
 
