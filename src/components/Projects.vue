@@ -14,8 +14,7 @@
         <div>
           <a :href="card.source" target="_blank" @click="handleSourceLink(card.source)">
             <button type="button">
-              {{ card.source === '' ? 'Private' : 'Source' }}
-              <i class="fa-solid fa-code"></i>
+              {{ card.source === '' ? 'Code 🔒' : 'Code' }}
             </button>
           </a>
         </div>
@@ -29,7 +28,6 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-
 
     // Arry of images with project information
     const cards = ref([
@@ -56,9 +54,9 @@ export default {
       },
       {
         title: "playstationclone.xyz",
-        image: "/images/soon.svg",
+        image: "/images/ps.svg",
         description: "lorem Ipsum Is my bestest friend in the entire world.",
-        url: "https://www.codewars.com/dashboard",
+        url: "https://github.com/Troyzhenny/playstation.com-clone",
         source: "https://github.com/Troyzhenny/playstation.com-clone",
       },
       {
