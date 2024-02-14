@@ -10,7 +10,7 @@ export default {
 
         const mailLinks = ref([
             { name: "tevincampbell73@yahoo.com", url: "mailto:tevincampbell@yahoo.com" },
-            {name: "Discord: @troyzhen"}
+            { name: "Discord: @troyzhen" }
         ]);
 
         return {
@@ -25,20 +25,24 @@ export default {
     <div class="footer--container">
         <div class="links--container">
             <div id="sq1">
-                <h3>Links</h3>
-                <span>
-                    <a v-for="(footerLink, index) in footerLinks" :key="index" :href="footerLink.url" target="_blank">
-                        <p>{{ footerLink.name }}</p>
-                    </a>
-                </span>
+                <div class="block1">
+                    <h3>Links</h3>
+                    <span>
+                        <a v-for="(footerLink, index) in footerLinks" :key="index" :href="footerLink.url" target="_blank">
+                            <p>{{ footerLink.name }}</p>
+                        </a>
+                    </span>
+                </div>
             </div>
             <div id="sq2">
-                <h3>Contact</h3>
-                <span>
-                    <a v-for="(mailLink, index) in mailLinks" :key="index" :href="mailLink.url">
-                        <p>{{ mailLink.name }}</p>
-                    </a>
-                </span>
+                <div class="block2">
+                    <h3>Contact</h3>
+                    <span>
+                        <a v-for="(mailLink, index) in mailLinks" :key="index" :href="mailLink.url">
+                            <p>{{ mailLink.name }}</p>
+                        </a>
+                    </span>
+                </div>
             </div>
             <div class="to--top">
                 <a href="#home">
@@ -48,7 +52,7 @@ export default {
             </div>
         </div>
         <div class="copyright--container">
-            <p>©2024 Tevin Campbell  — built with Vue and lots of 💖</p>
+            <p>©2024 Tevin Campbell — built with Vue and lots of 💖</p>
         </div>
     </div>
 </template>
@@ -61,78 +65,87 @@ export default {
     display: flex;
     flex-wrap: wrap;
     place-items: center;
+    justify-content: center;
     width: 100%;
     min-height: 100%;
     color: $mainColor;
     background-color: $darkGray;
 
-    border: 1px solid $mainColor;
-
 
     .links--container {
         display: flex;
+        flex-wrap: wrap;
         place-items: center;
         justify-content: space-between;
-        padding: 40px;
         width: 100%;
         min-height: 100%;
         color: $lightGray;
 
-    border: 1px solid $mainColor;
-
-
         :is(#sq1, #sq2) {
             display: flex;
             justify-content: center;
-            flex-direction: column;
-            width: 100%;
+            width: 50%;
             min-height: 100%;
-            
-            border: 1px solid $mainColor;
-            
-            
+            padding: 50px;
+
+
+            :is(.block1, .block2) {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                width: 100%;
+            }
+
+
             h3 {
                 color: $light;
-                font-size: 1em;
+                font-size: 1.3em;
                 margin-bottom: 10px;
             }
 
-            span > a  {
+            span>a {
                 display: flex;
                 place-items: center;
                 margin-bottom: 15px;
-                font-size: 1em;
+                font-size: .7em;
                 gap: 8px;
                 color: $lightGray;
+
                 &:hover {
                     color: $mainColor;
                 }
             }
         }
     }
-    .to--top a {
+
+    .to--top {
         display: flex;
-        place-items: center;
         justify-content: center;
         width: 100%;
         min-height: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
         gap: 5px;
-    
-        border: 1px solid $mainColor;
-    
-    
+
+        a {
+            display: flex;
+            place-items: center;
+            justify-content: center;
+        }
+
+
         .fa-shuttle-space {
             font-size: 2em;
             transform: rotateZ(-90deg);
             color: $lightGray;
-    
+
             &:hover {
                 color: $mainColor;
                 transform: rotate(-90deg) translateX(20px);
                 transition: .3s ease-in-out;
             }
         }
-    
+
         p {
             font-weight: 500;
             color: $lightGray;
@@ -150,6 +163,7 @@ export default {
     background-color: $dark;
 
     p {
+        font-size: 1em;
         text-align: center;
         width: 100%;
         min-width: 50%;
@@ -164,6 +178,17 @@ export default {
         .heading--cont>h2 {
             font-size: 3em;
             margin: 50px;
+        }
+
+        .links--container {
+
+            #sq1,
+            #sq2 {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+
+            }
         }
     }
 }

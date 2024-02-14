@@ -35,7 +35,6 @@
 
     .heading--cont {
         h2 {
-            font-size: 5em;
             margin: 60px;
             color: $darkGray;
         }
@@ -48,7 +47,20 @@
 
         p {
             color: $lightGray;
+        }
+    }
+}
+
+// Queries //
+/* Styles for smaller screens */
+@media screen and (max-width: 768px) {
+    .about--container {
+        h2 {
             font-size: 3em;
+        }
+
+        p {
+            font-size: 1.25em;
         }
     }
 }
