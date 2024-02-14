@@ -17,7 +17,7 @@ import Footer from './components/Footer.vue';
       <div class="hero--shelf">
         <div class="hero--text">
           <p>Hi There!</p>
-          <h2>I'm Tevin</h2>
+          <h1>I'm Tevin</h1>
           <p>
             I am a passionate web developer with a background in <br> graphic design, merging functionality with stunning
             visuals.
@@ -65,7 +65,7 @@ import Footer from './components/Footer.vue';
   justify-content: center;
   place-items: center;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   background-color: $darkGray;
 
   .hero--shelf {
@@ -94,11 +94,16 @@ import Footer from './components/Footer.vue';
 
 
   .hero--text {
-    h2 {
+    h1 {
       font-family: 'Cabinet Grotesk', sans-serif;
       line-height: .8;
       color: $light;
       margin: 10px 0;
+    }
+
+    p:nth-child(1) {
+      color: $mainColor;
+      font-weight: 500;
     }
 
     p {
@@ -118,7 +123,7 @@ import Footer from './components/Footer.vue';
       margin-left: 30px;
       margin-right: -50px;
 
-      h2 {
+      h1 {
         font-size: 4em;
       }
 
