@@ -10,66 +10,78 @@
           <h3 class="title">{{ card.title }} <i class="fa-solid fa-arrow-right"></i></h3>
         </span>
         <p class="description">{{ card.description }}</p>
-        <br><br>
-        <input type="button" value="Code" @click="handleSourceLink(card.source)">
+        <br>
+        <div>
+          <a :href="card.source" target="_blank" @click="handleSourceLink(card.source)">
+            <button type="button">
+              {{ card.source === '' ? 'Private' : 'Source' }}
+              <i class="fa-solid fa-code"></i>
+            </button>
+          </a>
+        </div>
       </a>
     </div>
   </div>
 </template>
   
 <script>
+import { ref } from 'vue';
+
 export default {
   setup() {
-    const handleSourceLink = (source) => {
-      window.open(source, "_blank")
-    }
+
 
     // Arry of images with project information
-    const cards = [
-  {
-    title: "expensetracker.app",
-    image: "/images/soon.svg",
-    description: "lorem Ipsum Is my bestest friend in the entire world.",
-    url: "https://www.codewars.com/dashboard",
-    source: "https://www.codewars.com/dashboard",
-  },
-  {
-    title: "dominospos.app",
-    image: "/images/soon.svg",
-    description: "lorem Ipsum Is my bestest friend in the entire world.",
-    url: "https://www.codewars.com/dashboard",
-    source: "https://www.codewars.com/dashboard",
-  },
-  {
-    title: "kyromerch.shop",
-    image: "/images/soon.svg",
-    description: "lorem Ipsum Is my bestest friend in the entire world.",
-    url: "https://www.codewars.com/dashboard",
-    source: "https://www.codewars.com/dashboard",
-  },
-  {
-    title: "playstationclone.xyz",
-    image: "/images/soon.svg",
-    description: "lorem Ipsum Is my bestest friend in the entire world.",
-    url: "https://www.codewars.com/dashboard",
-    source: "https://github.com/Troyzhenny/playstation.com-clone",
-  },
-  {
-    title: "tevintc.xyz",
-    image: "/images/devp.svg",
-    description: "Version 2 of my first portfolio created with vuejs.",
-    url: "https://www.patreon.com/Troyzhen?fan_landing=true&view_as=public",
-    source: "https://github.com/Troyzhenny/dev-portfolio",
-  },
-  {
-    title: "pbrp.site",
-    image: "/images/soon.svg",
-    description: "lorem Ipsum Is my bestest friend in the entire world.",
-    url: "https://www.codewars.com/dashboard",
-    source: "https://www.codewars.com/dashboard",
-  },
-]
+    const cards = ref([
+      {
+        title: "expensetracker.app",
+        image: "/images/soon.svg",
+        description: "lorem Ipsum Is my bestest friend in the entire world.",
+        url: "https://www.codewars.com/dashboard",
+        source: "https://www.codewars.com/dashboard",
+      },
+      {
+        title: "dominospos.app",
+        image: "/images/soon.svg",
+        description: "lorem Ipsum Is my bestest friend in the entire world.",
+        url: "https://www.codewars.com/dashboard",
+        source: "https://www.codewars.com/dashboard",
+      },
+      {
+        title: "kyromerch.shop",
+        image: "/images/soon.svg",
+        description: "lorem Ipsum Is my bestest friend in the entire world.",
+        url: "https://www.codewars.com/dashboard",
+        source: "",
+      },
+      {
+        title: "playstationclone.xyz",
+        image: "/images/soon.svg",
+        description: "lorem Ipsum Is my bestest friend in the entire world.",
+        url: "https://www.codewars.com/dashboard",
+        source: "https://github.com/Troyzhenny/playstation.com-clone",
+      },
+      {
+        title: "tevintc.xyz",
+        image: "/images/devp.svg",
+        description: "Version 2 of my first portfolio created with vuejs.",
+        url: "https://www.patreon.com/Troyzhen?fan_landing=true&view_as=public",
+        source: "https://github.com/Troyzhenny/dev-portfolio",
+      },
+      {
+        title: "pbrp.site",
+        image: "/images/soon.svg",
+        description: "A website I created for the pbrp ragemp GTA V server",
+        url: "https://www.codewars.com/dashboard",
+        source: "",
+      },
+    ]);
 
+    const handleSourceLink = (source) => {
+      if (source === "") {
+        alert("Sorry, but this source is private.");
+      }
+    };
 
     return { cards, handleSourceLink };
   }
@@ -85,10 +97,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  min-height: 100vh;
-  // TEST
-  position: relative;
-  z-index: -1;
+  min-height: 100%;
 
   color: $light;
   background-color: $dark;
@@ -104,47 +113,46 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    height: auto;
     margin-top: 50px;
+    width: 100%;
+    height: 100%;
 
     i {
       font-size: .70em;
       transform: rotateZ(-45deg);
     }
 
-    // Source Code Button
-    input {
-      width: 130px;
-      color: $light;
-      background-color: $dark;
-      padding: 10px 40px;
+    button {
+      width: 8rem;
+      height: 2.5rem;
       border-radius: 5px;
       border: 1px solid $lightGray;
-      display: flex;
-      place-items: center;
-      justify-content: center;
+      background-color: $darkGray;
+      color: $light;
+      margin: 1.5rem;
       cursor: pointer;
-
-      &:hover {
-        transition: .2s ease-in-out;
-        border-color: $mainColor;
-      }
     }
   }
 }
 
 .card {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   place-items: center;
+  text-align: center;
   border-radius: 5px;
   box-shadow: 10px 10px 20px 0px $projectCardShadow;
   width: 500px;
-  height: 500px;
+  height: 100%;
   margin: 50px;
-  text-align: center;
+
+
+  .card-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
 
   &:hover {
     border-radius: 20px;
@@ -161,17 +169,11 @@ export default {
       transition: .3s ease;
     }
 
-    p {
+    .description {
       color: $light;
     }
   }
 
-  .card-image {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 5px 5px 0 0;
-  }
 
   .title {
     font-weight: 600;
@@ -182,18 +184,34 @@ export default {
   .description {
     margin-top: 20px;
     padding: 0 20px;
+    font-size: 1em;
+    text-align: left;
+    color: $lightGray;
   }
 }
 
 // Queries //
 /* Styles for smaller screens */
 @media screen and (max-width: 768px) {
-    .project--container {
-        .heading--cont>h2 {
-            font-size: 3em;
-            margin: 50px 0 -40px 50px;
-        }
+  .project--container {
+    .heading--cont>h2 {
+      font-size: 3em;
+      margin: 50px 0 -40px 50px;
     }
+
+    .title {
+      color: $mainColor;
+      font-weight: 600;
+      font-size: 1.5em;
+      margin: 2rem 0 0 0;
+    }
+
+    .description {
+      padding: 0 .8rem;
+      font-size: 1em;
+      text-align: left;
+    }
+  }
 }
 </style>
   
