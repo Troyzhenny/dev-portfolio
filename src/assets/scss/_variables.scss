@@ -37,5 +37,6 @@ $projectCardShadow: #131313;
         background-color: $mainColor;
         transition: .2s ease-in-out;
         transform: translateY(10px);
+        cursor: pointer;
     }
 }

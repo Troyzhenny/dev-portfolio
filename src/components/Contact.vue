@@ -23,7 +23,7 @@ export default {
 <template>
     <section class="contact--container" id="contact">
         <div class="heading--cont">
-            <h2>GET IN TOUCH</h2>
+            <h2>GET IN TOUCH.</h2>
         </div>
         <div class="social--container">
             <div class="socialLinks">
@@ -69,6 +69,8 @@ export default {
 .contact--container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    place-items: center;
     width: 100%;
     min-height: 100vh;
 
@@ -91,6 +93,7 @@ export default {
         width: 100%;
         min-height: 100%;
 
+
         .socialLinks {
             display: flex;
             flex-direction: column;
@@ -101,7 +104,7 @@ export default {
                 font-size: 1.8em;
             }
 
-            span>a {
+            span > a {
                 font-size: 1.5em;
                 color: $lightGray;
                 display: flex;
@@ -115,7 +118,9 @@ export default {
     .form--container {
         display: flex;
         place-items: center;
+        width: 100%;
         min-height: 100%;
+
 
         form {
             width: 100%;
@@ -148,13 +153,7 @@ export default {
             }
 
             #submit-btn {
-                width: 150px;
-                margin-top: 40px;
-                cursor: pointer;
-                font-weight: 600;
-                color: $dark;
-                border: 2px solid $mainColor;
-                background-color: $mainColor;
+                @include cta-btn-mix;
 
                 &:hover {
                     color: $mainColor;
@@ -174,8 +173,44 @@ export default {
 @media screen and (max-width: 768px) {
     .contact--container {
         .heading--cont>h2 {
-            font-size: 3em;
+            font-size: 2.8em;
+            line-height: 1.1;
             margin: 50px;
+        }
+
+        .social--container {
+            padding: 5%;
+
+            .socialLinks {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h3 {
+                    color: $dark;
+                    font-size: 1.25em;
+                }
+
+                span>a {
+                    font-size: .90em;
+                    color: $lightGray;
+                }
+            }
+        }
+
+        .form--container {
+            form {
+                padding: 5%;
+
+                label {
+                    font-size: 1.25em;
+                }
+
+                #submit-btn {
+                    width: 140px;
+                    height: 50px
+                }
+            }
         }
     }
 }

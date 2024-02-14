@@ -139,7 +139,6 @@ import Footer from './components/Footer.vue';
 
       .btn--container {
         .cta--btn {
-          @include cta-btn-mix;
           width: 140px;
           height: 50px
         }
