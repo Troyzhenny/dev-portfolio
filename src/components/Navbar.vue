@@ -122,13 +122,15 @@ header {
         max-width: 450px;
         position: fixed;
         top: 0;
-        right: -450px; //Change to -450px to hide
+        right: -450px;
         background-color: $dark;
 
         display: flex;
         justify-content: center;
         transition: .2s ease;
         position: absolute;
+
+
 
 
         ul {
@@ -156,6 +158,7 @@ header {
         cursor: pointer;
         width: 40px;
         height: 40px;
+
 
         span {
             width: 40px;

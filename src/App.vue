@@ -32,7 +32,7 @@ import Footer from './components/Footer.vue';
         </div>
 
         <div class="hero--image">
-          <img src="/images/progressive_app.svg" alt="">
+          <img src="/images/progressive_app.svg" alt="hero-image">
         </div>
       </div>
     </div>

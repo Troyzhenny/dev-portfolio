@@ -46,7 +46,6 @@ export default {
             </div>
             <div class="to--top">
                 <a href="#home">
-                    <i class="fa-solid fa-shuttle-space"></i>
                     <p>BLAST OFF</p>
                 </a>
             </div>
@@ -133,22 +132,15 @@ export default {
             justify-content: center;
         }
 
-
-        .fa-shuttle-space {
-            font-size: 2em;
-            transform: rotateZ(-90deg);
+        
+        p {
+            font-weight: 500;
             color: $lightGray;
 
             &:hover {
                 color: $mainColor;
-                transform: rotate(-90deg) translateX(20px);
                 transition: .3s ease-in-out;
             }
-        }
-
-        p {
-            font-weight: 500;
-            color: $lightGray;
         }
     }
 }

@@ -7,7 +7,7 @@
       <a v-for="(card, index) in cards" :key="index" :href="card.url" target="_blank" class="card">
         <img :src="card.image" alt="Card Image" class="card-image">
         <span>
-          <h3 class="title">{{ card.title }} <i class="fa-solid fa-arrow-right"></i></h3>
+          <h3 class="title">{{ card.title }}</h3>
         </span>
         <p class="description">{{ card.description }}</p>
         <br>
@@ -29,7 +29,7 @@ import { ref } from 'vue';
 export default {
   setup() {
 
-    // Arry of images with project information
+    // Array of images with project information
     const cards = ref([
       {
         title: "expensetracker.app",
@@ -39,11 +39,11 @@ export default {
         source: "https://www.codewars.com/dashboard",
       },
       {
-        title: "dominospos.app",
+        title: "surgepos.app",
         image: "/images/soon.svg",
-        description: "lorem Ipsum Is my bestest friend in the entire world.",
-        url: "https://www.codewars.com/dashboard",
-        source: "https://www.codewars.com/dashboard",
+        description: "A POS app inspired by pulse POS from Domino's, but more modern and intuitive.",
+        url: "https://github.com/Troyzhenny/surge-pos",
+        source: "https://github.com/Troyzhenny/surge-pos",
       },
       {
         title: "kyromerch.shop",
@@ -62,14 +62,14 @@ export default {
       {
         title: "tevintc.xyz",
         image: "/images/devp.svg",
-        description: "Version 2 of my first portfolio created with vuejs.",
+        description: "My dve portfolio, showcasing my selected work, and created with vuejs.",
         url: "https://www.patreon.com/Troyzhen?fan_landing=true&view_as=public",
         source: "https://github.com/Troyzhenny/dev-portfolio",
       },
       {
         title: "pbrp.site",
         image: "/images/soon.svg",
-        description: "A website I created for the pbrp ragemp GTA V server",
+        description: "A website I created for the pbrp ragemp community",
         url: "https://www.codewars.com/dashboard",
         source: "",
       },
@@ -161,11 +161,6 @@ export default {
     .card-image {
       border-radius: 20px 20px 0 0;
       transition: .2s ease-in-out;
-    }
-
-    .fa-arrow-right {
-      transform: rotateZ(-45deg) translate(10px, -5px);
-      transition: .3s ease;
     }
 
     .description {
